@@ -1,0 +1,26 @@
+diff --git a/libavutil/hwcontext_vulkan.c b/libavutil/hwcontext_vulkan.c
+index d288fb7..0cbb4ec 100644
+--- a/libavutil/hwcontext_vulkan.c
++++ b/libavutil/hwcontext_vulkan.c
+@@ -27,6 +27,7 @@
+ #include "compat/w32dlfcn.h"
+ #else
+ #include <dlfcn.h>
++#include <pthread.h>
+ #include <unistd.h>
+ #endif
+ 
+diff --git a/libavutil/vulkan.c b/libavutil/vulkan.c
+#index bf8456b..5e0024d 100644
+--- a/libavutil/vulkan.c
++++ b/libavutil/vulkan.c
+@@ -23,6 +23,8 @@
+ #include "vulkan.h"
+ #include "vulkan_loader.h"
+ 
++#include <pthread.h>
++
+ const VkComponentMapping ff_comp_identity_map = {
+     .r = VK_COMPONENT_SWIZZLE_IDENTITY,
+     .g = VK_COMPONENT_SWIZZLE_IDENTITY,
+
