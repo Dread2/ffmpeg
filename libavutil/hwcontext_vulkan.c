@@ -27,6 +27,7 @@
 #include "compat/w32dlfcn.h"
 #else
 #include <dlfcn.h>
+#include <pthread.h>
 #include <unistd.h>
 #endif
 
